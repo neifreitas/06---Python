@@ -1,6 +1,6 @@
 from random import randint
 
-class Die():
+class Dice():
     """Uma classe que representa um único dado."""
     
     def __init__(self, num_sides=6) -> None:

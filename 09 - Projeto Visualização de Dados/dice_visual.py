@@ -1,20 +1,20 @@
-from die import Die
+from dice import Dice
 import pygal
 
 # Cria um D6
-die = Die()
+dice = Dice()
 
 # Faz alguns lançamentos e armazena os resultados em um lista
 results = []
 for roll in range(1000):
-    result = die.roll()
+    result = dice.roll()
     results.append(result)
     
 #print(results)
 
 # Analisa os resultados
 frequencies = []
-for value in range(1, die.num_sides+1):
+for value in range(1, dice.num_sides+1):
     frequency = results.count(value)
     frequencies.append(frequency)
 
@@ -29,4 +29,4 @@ hist._x_title = "Result"
 hist._y_title = "Frequency of Result"
 
 hist.add('D6', frequencies)
-hist.render_to_file('die_visual.svg')
+hist.render_to_file('dice_visual.svg')
